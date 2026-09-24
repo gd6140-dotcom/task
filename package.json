@@ -1,0 +1,33 @@
+{
+  "name": "campusflow",
+  "version": "2.0.0",
+  "description": "CampusFlow - Full-Stack Campus Operations, Issue Workflow & Resource Management System",
+  "main": "server/index.js",
+  "scripts": {
+    "start": "node server/index.js",
+    "server": "node server/index.js",
+    "client": "npm --prefix client run dev",
+    "build": "npm --prefix client run build",
+    "seed": "node -e \"require('./server/config/database').initializeDatabase()\"",
+    "test": "node test-api.js"
+  },
+  "keywords": [
+    "campusflow",
+    "engineering-challenge",
+    "react",
+    "express",
+    "sqlite",
+    "workflow",
+    "crud"
+  ],
+  "author": "CampusFlow Engineering Team",
+  "license": "MIT",
+  "dependencies": {
+    "bcryptjs": "^3.0.3",
+    "better-sqlite3": "^12.6.2",
+    "cors": "^2.8.6",
+    "dotenv": "^17.3.1",
+    "express": "^5.2.1",
+    "jsonwebtoken": "^9.0.3"
+  }
+}
