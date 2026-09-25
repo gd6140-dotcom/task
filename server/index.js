@@ -72,8 +72,10 @@ app.use((req, res, next) => {
 // Central Error Handler
 app.use(errorHandler);
 
-app.listen(PORT, () => {
-  console.log(`🚀 CampusFlow Server running at http://localhost:${PORT}`);
-});
+if (require.main === module && !process.env.VERCEL) {
+  app.listen(PORT, () => {
+    console.log(`🚀 CampusFlow Server running at http://localhost:${PORT}`);
+  });
+}
 
 module.exports = app;

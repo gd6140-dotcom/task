@@ -3,7 +3,9 @@ const path = require('path');
 const fs = require('fs');
 const bcrypt = require('bcryptjs');
 
-const dbDir = path.join(__dirname, '..', 'data');
+const os = require('os');
+const isVercel = Boolean(process.env.VERCEL);
+const dbDir = isVercel ? os.tmpdir() : path.join(__dirname, '..', 'data');
 if (!fs.existsSync(dbDir)) {
   fs.mkdirSync(dbDir, { recursive: true });
 }
